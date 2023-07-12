@@ -1,0 +1,94 @@
+﻿<Window x:Class="WpfApp3.Products_Win" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3" Icon="\logo_main.jpg"
+        mc:Ignorable="d"
+        Title="МКТ" Height="720" Width="1280">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="105"></RowDefinition>
+            <RowDefinition/>
+            <RowDefinition Height="45"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border BorderThickness ="0,0,0,3" BorderBrush="Black" Background="Wheat" Margin="0,0,0,550" Grid.RowSpan="2">
+            <Label Width="120" HorizontalAlignment="Right" Height="30" VerticalAlignment="Center" x:Name="name_customer"/>
+        </Border>
+        <Border CornerRadius="10" x:Name="Case_Border" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="194" Margin="932,323,0,0" Grid.Row="1" VerticalAlignment="Top" Width="250"/>
+        <Border CornerRadius="10" x:Name="HDD_Border" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="194" Margin="658,323,0,0" Grid.Row="1" VerticalAlignment="Top" Width="250"/>
+        <Border CornerRadius="10" x:Name="Monitor_Border" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="194" Margin="392,323,0,0" Grid.Row="1" VerticalAlignment="Top" Width="250"/>
+        <Border CornerRadius="10" x:Name="RAM_Border" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="194" Margin="118,323,0,0" Grid.Row="1" VerticalAlignment="Top" Width="250"/>
+        <Border CornerRadius="10" x:Name="PU_Border" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="194" Margin="930,51,0,0" Grid.Row="1" VerticalAlignment="Top" Width="250"/>
+        <Border CornerRadius="10" x:Name="VC_Border" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="194" Margin="658,51,0,0" Grid.Row="1" VerticalAlignment="Top" Width="250"/>
+        <Border CornerRadius="10" x:Name="MB_Border" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="194" Margin="388,51,0,0" Grid.Row="1" VerticalAlignment="Top" Width="250"/>
+        <Border CornerRadius="10" x:Name="CPU_Border" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="194" Margin="118,51,0,0" Grid.Row="1" VerticalAlignment="Top" Width="250"/>
+        <Image x:Name="go_back" Source="/logo_main.jpg" HorizontalAlignment="Left" Width="124" Margin="0,-13,0,537" MouseDown="go_back_MouseDown" Grid.RowSpan="2">
+            <Image.ToolTip>
+                <ToolTip Content="Вернуться назад"/>
+            </Image.ToolTip>
+        </Image>
+        <TextBlock Text="Магазин компьютерной техники" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontFamily="Tahoma" Height="36" Width="452"/>
+        <Border Grid.Row="2" BorderThickness ="0,3,0,0" BorderBrush="Black" Margin="0,5,0,0">
+            <Grid Background="Wheat"/>
+        </Border>
+        <Image x:Name="CPU" Source="\Images\kekis\CPU.jpg" HorizontalAlignment="Left" Height="130" Margin="138,71,0,0" Grid.Row="1" VerticalAlignment="Top" Width="200" MouseEnter="CPU_MouseEnter" MouseLeave="CPU_MouseLeave" MouseDown="CPU_MouseDown">
+            <Image.ToolTip>
+                <ToolTip Content="Это устройство, которое выполняет вычислительные и логические операции с данными."/>
+            </Image.ToolTip>
+        </Image>
+        <Image x:Name="MB" Source="/Images/kekis/MB.jpg" HorizontalAlignment="Left" Height="130" Margin="438,71,0,0" Grid.Row="1" VerticalAlignment="Top" Width="145" MouseEnter="MB_MouseEnter" MouseLeave="MB_MouseLeave" MouseDown="MB_MouseDown">
+            <Image.ToolTip>
+                <ToolTip Content="Это многослойная печатная плата, к ней подключаются все элементы компьютера: жесткий диск, процессор, оперативная память и т.д."/>
+            </Image.ToolTip>
+        </Image>
+        <Image x:Name="VC" Source="/Images/kekis/VC.jpg" HorizontalAlignment="Left" Height="130" Margin="718,71,0,0" Grid.Row="1" VerticalAlignment="Top" Width="152" MouseEnter="VC_MouseEnter" MouseLeave="VC_MouseLeave" MouseDown="VC_MouseDown">
+            <Image.ToolTip>
+                <ToolTip Content="Это составная часть компьютера, функция которой заключается в том, чтобы перевести определенные данные, расположенные в памяти системы в доступное изображение."/>
+            </Image.ToolTip>
+        </Image>
+        <Image x:Name="PU" Source="/Images/kekis/PU.jpg" HorizontalAlignment="Left" Height="130" Margin="990,71,0,0" Grid.Row="1" VerticalAlignment="Top" Width="144" MouseEnter="PU_MouseEnter" MouseLeave="PU_MouseLeave" MouseDown="PU_MouseDown">
+            <Image.ToolTip>
+                <ToolTip Content="Это электронное устройство, формирующее напряжение, необходимое определенному компоненту ПК, из напряжения электрической сети."/>
+            </Image.ToolTip>
+        </Image>
+        <Image x:Name="RAM" Source="/Images/kekis/RAM.jpg" HorizontalAlignment="Left" Height="150" Margin="138,329,0,0" Grid.Row="1" VerticalAlignment="Top" Width="200" MouseEnter="RAM_MouseEnter" MouseLeave="RAM_MouseLeave" MouseDown="RAM_MouseDown">
+            <Image.ToolTip>
+                <ToolTip HorizontalAlignment="Right" Content="Это такая форма компьютерной памяти, которая может считываться и изменяться в любом порядке, обычно используется для хранения рабочих данных и машинного кода."/>
+            </Image.ToolTip>
+        </Image>
+        <Image x:Name="Monitor" Source="/Images/kekis/Monitor.jpg" HorizontalAlignment="Left" Height="126" Margin="438,347,0,0" Grid.Row="1" VerticalAlignment="Top" Width="179" MouseEnter="Monitor_MouseEnter" MouseLeave="Monitor_MouseLeave" MouseDown="Monitor_MouseDown">
+            <Image.ToolTip>
+                <ToolTip HorizontalAlignment="Right" Content="Это устройство вывода информации с компьютера в графическом виде"/>
+            </Image.ToolTip>
+        </Image>
+        <Image x:Name="HDD" Source="/Images/kekis/HDD.jpg" HorizontalAlignment="Left" Height="126" Margin="736,347,0,0" Grid.Row="1" VerticalAlignment="Top" Width="103" MouseEnter="HDD_MouseEnter" MouseLeave="HDD_MouseLeave" MouseDown="HDD_MouseDown">
+            <Image.ToolTip>
+                <ToolTip HorizontalAlignment="Left" Content="Это устройство, используемое для хранения цифрового содержимого и других данных на компьютерах."/>
+            </Image.ToolTip>
+        </Image>
+        <Image x:Name="Case" Source="/Images/kekis/Case.jpg" HorizontalAlignment="Left" Height="150" Margin="1004,330,0,0" Grid.Row="1" VerticalAlignment="Top" Width="105" MouseEnter="Case_MouseEnter" MouseLeave="Case_MouseLeave" MouseDown="Case_MouseDown">
+            <Image.ToolTip>
+                <ToolTip HorizontalAlignment="Left" Content="Это внешняя оболочка системного блока персонального компьютера, защищающая его внутренние элементы от механических повреждений."/>
+            </Image.ToolTip>
+        </Image>
+        <Label Content="Процессоры" FontSize="20" HorizontalAlignment="Left" Margin="175,201,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="Материнские платы" FontSize="20" HorizontalAlignment="Left" Margin="420,201,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="Видеокарты" FontSize="20" HorizontalAlignment="Left" Margin="723,201,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="Блоки питания" FontSize="20" HorizontalAlignment="Left" Margin="984,201,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="Оперативная память" FontSize="20" HorizontalAlignment="Left" Margin="143,480,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="Мониторы" FontSize="20" HorizontalAlignment="Left" Margin="468,480,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="Жесткие диски" FontSize="20" HorizontalAlignment="Left" Margin="710,480,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="Корпусы" FontSize="20" HorizontalAlignment="Left" Margin="1012,480,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="LabelBasket" FontSize="16" Content="Корзина" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.891,0.353" Margin="129,78,0,0" Grid.RowSpan="2"/>
+        <Image x:Name="orders_products" Source="/Images/logo.png" HorizontalAlignment="Left" Width="70" MouseLeftButtonDown="orders_products_MouseLeftButtonDown" VerticalAlignment="Center" Margin="220,0,0,0" Height="68"/>
+        <Label x:Name="LabelOrders" FontSize="16" Content="Заказы" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="224,78,0,0" Grid.RowSpan="2"/>
+        <Image x:Name="basket_of_products" HorizontalAlignment="Left" Source="/basket.png" Height="60" VerticalAlignment="Top" Width="75" MouseLeftButtonDown="basket_of_products_MouseLeftButtonDown" Margin="135,24,0,0" RenderTransformOrigin="1.333,0.634"/>
+        <Label x:Name="UserName" BorderBrush="Black" Width="300" BorderThickness="2" Height="30" Content="" HorizontalAlignment="Left" Margin="950,65,0,0" VerticalAlignment="Top"/>
+        <Image x:Name="UserImage" Source="/UserIcon-PhotoRoom.png-PhotoRoom-PhotoRoom.png-PhotoRoom.png" HorizontalAlignment="Left" Width="70" VerticalAlignment="Top" Margin="1065,-2,0,0" MouseLeftButtonDown="UserImage_MouseLeftButtonDown">
+            <Image.ToolTip>
+                <ToolTip Content="Страница пользователя"/>
+            </Image.ToolTip>
+        </Image>
+    </Grid>
+</Window>

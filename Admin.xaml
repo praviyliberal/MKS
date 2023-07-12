@@ -1,0 +1,67 @@
+﻿<Window x:Class="WpfApp3.Admin" WindowStartupLocation="CenterScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d" Icon="logo_main.jpg"
+        Title="Администратор" Height="720" Width="1280">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="65"></RowDefinition>
+            <RowDefinition/>
+            <RowDefinition Height="40"></RowDefinition>
+
+        </Grid.RowDefinitions>
+        <Border BorderThickness ="0,0,0,3" BorderBrush="Black" Background="Wheat" Margin="0,0,0,546" Grid.RowSpan="2"/>
+        <Image x:Name="go_back" Source="logo_main.jpg" HorizontalAlignment="Left" Width="85" MouseLeftButtonDown="go_back_MouseLeftButtonDown"/>
+        <TextBlock Text="Магазин компьютерной техники" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontFamily="Tahoma" Height="36" Width="452"/>
+        <Border Grid.Row="2" BorderThickness ="0,3,0,0" BorderBrush="Black" Margin="0,5,0,0">
+            <Grid Background="Wheat"/>
+        </Border>
+        <ListView x:Name="products_list" Grid.Row="1" Margin="0,84,775,10" SelectionChanged="products_list_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="100" Header="Изображение">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding Pic}" MaxWidth="100" MaxHeight="100" Stretch="UniformToFill"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="300" DisplayMemberBinding="{Binding Path=Model}" Header="Название"/>
+                    <GridViewColumn Width="100" DisplayMemberBinding="{Binding Path=Coast}" Header="Стоимость"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Модель" FontSize="20" HorizontalAlignment="Left" Margin="543,78,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="LabelDetail2" Content="Характеристика1" FontSize="20" HorizontalAlignment="Left" Margin="787,78,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="LabelDetail3" Content="Характеристика2" FontSize="20" HorizontalAlignment="Left" Margin="1042,78,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="LabelDetail4" Content="Модель" FontSize="20" HorizontalAlignment="Left" Margin="543,176,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="LabelDetail5" Content="Характеристика1" FontSize="20" HorizontalAlignment="Left" Margin="787,176,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="LabelDetail6" Content="Характеристика2" FontSize="20" HorizontalAlignment="Left" Margin="1042,176,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="LabelDetail7" Content="Модель" FontSize="20" HorizontalAlignment="Left" Margin="543,279,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="LabelDetail8" Content="Характеристика1" FontSize="20" HorizontalAlignment="Left" Margin="787,279,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="LabelDetail9" Content="Характеристика2" FontSize="20" HorizontalAlignment="Left" Margin="1042,279,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="LabelDetail10" Content="Модель" FontSize="20" HorizontalAlignment="Left" Margin="543,394,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="LabelDetail11" Content="Характеристика1" FontSize="20" HorizontalAlignment="Left" Margin="787,394,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="LabelDetail12" Content="Характеристика2" FontSize="20" HorizontalAlignment="Left" Margin="1042,394,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBox x:Name="ModelDetail" FontSize="20" HorizontalAlignment="Left" Margin="546,120,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="219"/>
+        <TextBox x:Name="Detail2" FontSize="20" HorizontalAlignment="Left" Margin="787,120,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="233"/>
+        <TextBox x:Name="Detail3" FontSize="20" HorizontalAlignment="Left" Margin="1042,120,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="208"/>
+        <TextBox x:Name="Detail4" FontSize="20" HorizontalAlignment="Left" Margin="546,218,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="219"/>
+        <TextBox x:Name="Detail5" FontSize="20" HorizontalAlignment="Left" Margin="787,218,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="233"/>
+        <TextBox x:Name="Detail6" FontSize="20" HorizontalAlignment="Left" Margin="1042,218,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="208"/>
+        <TextBox x:Name="Detail7" FontSize="20" HorizontalAlignment="Left" Margin="546,321,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="219"/>
+        <TextBox x:Name="Detail8" FontSize="20" HorizontalAlignment="Left" Margin="787,321,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="233"/>
+        <TextBox x:Name="Detail9" FontSize="20" HorizontalAlignment="Left" Margin="1042,321,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="208"/>
+        <TextBox x:Name="Detail10" FontSize="20" HorizontalAlignment="Left" Margin="546,436,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="219"/>
+        <TextBox x:Name="Detail11" FontSize="20" HorizontalAlignment="Left" Margin="787,436,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="233"/>
+        <TextBox x:Name="Detail12" FontSize="20" HorizontalAlignment="Left" Margin="1042,436,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="208"/>
+        <Label x:Name="UserName" BorderBrush="Black" Width="300" BorderThickness="2" Height="30" Content="" HorizontalAlignment="Left" Margin="950,0,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <Image x:Name="UserImage" Source="/UserIcon-PhotoRoom.png-PhotoRoom-PhotoRoom.png-PhotoRoom.png" HorizontalAlignment="Left" Width="70" VerticalAlignment="Center" Margin="1065,0,0,0" MouseLeftButtonDown="UserImage_MouseLeftButtonDown"/>
+        <Button x:Name="SaveButton" Content="Сохранить" FontSize="20" HorizontalAlignment="Left" Margin="546,534,0,0" Grid.Row="1" VerticalAlignment="Top" Click="SaveButton_Click"/>
+        <Button x:Name="DeleteButton" Content="Удалить" FontSize="20" HorizontalAlignment="Left" Margin="688,534,0,0" Grid.Row="1" VerticalAlignment="Top" Click="DeleteButton_Click"/>
+        <Button x:Name="ClearButton" Content="Очистить" FontSize="20" HorizontalAlignment="Left" Margin="814,534,0,0" Grid.Row="1" VerticalAlignment="Top" Click="ClearButton_Click"/>
+    </Grid>
+</Window>

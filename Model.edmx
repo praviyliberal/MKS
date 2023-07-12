@@ -1,0 +1,1429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище DiplomModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Basket">
+          <Key>
+            <PropertyRef Name="Id_Basket" />
+          </Key>
+          <Property Name="Id_Basket" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_User" Type="int" Nullable="false" />
+          <Property Name="Id_Case" Type="int" />
+          <Property Name="Id_Processor" Type="int" />
+          <Property Name="Id_HDD" Type="int" />
+          <Property Name="Id_Monitor" Type="int" />
+          <Property Name="Id_Motherboard" Type="int" />
+          <Property Name="Id_PowerUnit" Type="int" />
+          <Property Name="Id_RAM" Type="int" />
+          <Property Name="Id_VideoCard" Type="int" />
+          <Property Name="Count" Type="int" />
+        </EntityType>
+        <EntityType Name="Cases">
+          <Key>
+            <PropertyRef Name="Id_Case" />
+          </Key>
+          <Property Name="Id_Case" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Model" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Type_Case" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FormMB" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FormPU" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Pic" Type="nchar" MaxLength="500" />
+          <Property Name="Coast" Type="int" />
+          <Property Name="Count" Type="int" />
+        </EntityType>
+        <EntityType Name="CPU">
+          <Key>
+            <PropertyRef Name="Id_Processor" />
+          </Key>
+          <Property Name="Id_Processor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Model" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Soket" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Count_of_Cores" Type="nchar" MaxLength="2" Nullable="false" />
+          <Property Name="Num_of_Threads" Type="nchar" MaxLength="2" Nullable="false" />
+          <Property Name="Name_Core" Type="nchar" MaxLength="30" />
+          <Property Name="Base_CPU" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Max_CPU" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CPU_overclocking" Type="bit" Nullable="false" />
+          <Property Name="Max_Memory" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="TDP" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Graphics_core" Type="bit" Nullable="false" />
+          <Property Name="Pic" Type="nchar" MaxLength="500" />
+          <Property Name="Coast" Type="int" />
+          <Property Name="Count" Type="int" />
+        </EntityType>
+        <EntityType Name="HDD">
+          <Key>
+            <PropertyRef Name="Id_HDD" />
+          </Key>
+          <Property Name="Id_HDD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Model" Type="nchar" MaxLength="40" Nullable="false" />
+          <Property Name="Count_Memory" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Max_Memory_Speed" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Interface" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Record" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Pic" Type="nchar" MaxLength="500" />
+          <Property Name="Coast" Type="int" />
+          <Property Name="Count" Type="int" />
+        </EntityType>
+        <EntityType Name="Monitor">
+          <Key>
+            <PropertyRef Name="Id_Monitor" />
+          </Key>
+          <Property Name="Id_Monitor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Model" Type="nchar" MaxLength="40" Nullable="false" />
+          <Property Name="Diagonal" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Type_Matrix" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Max_Resolution" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="frequency" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="VideoConn" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="PowerNeed" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Pic" Type="nchar" MaxLength="500" />
+          <Property Name="Coast" Type="int" />
+          <Property Name="Count" Type="int" />
+        </EntityType>
+        <EntityType Name="Motherboard">
+          <Key>
+            <PropertyRef Name="Id_Motherboard" />
+          </Key>
+          <Property Name="Id_Motherboard" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Model" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Form_factor" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Soket" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Memory_slots" Type="int" Nullable="false" />
+          <Property Name="Type_memory" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Max_memory" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Max_frequency" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Pic" Type="nchar" MaxLength="500" />
+          <Property Name="Coast" Type="int" />
+          <Property Name="Count" Type="int" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="Id_Order" />
+          </Key>
+          <Property Name="Id_Order" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Price" Type="int" Nullable="false" />
+          <Property Name="TimeOrder" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Id_User" Type="int" />
+          <Property Name="CodeOrder" Type="nchar" MaxLength="3" />
+          <Property Name="Id_PickUp" Type="int" />
+        </EntityType>
+        <EntityType Name="PickUp">
+          <Key>
+            <PropertyRef Name="Id_PickUp" />
+          </Key>
+          <Property Name="Id_PickUp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Adress" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PowerUnit">
+          <Key>
+            <PropertyRef Name="Id_PowerUnit" />
+          </Key>
+          <Property Name="Id_PowerUnit" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Model" Type="nchar" MaxLength="40" Nullable="false" />
+          <Property Name="Power" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Form" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Sertificat" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="PowerConn" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="PowerConnCPU" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="PowerConnVideo" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Pic" Type="nvarchar" MaxLength="500" />
+          <Property Name="Coast" Type="int" />
+          <Property Name="Count" Type="int" />
+        </EntityType>
+        <EntityType Name="RAM">
+          <Key>
+            <PropertyRef Name="Id_RAM" />
+          </Key>
+          <Property Name="Id_RAM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Model" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Type_Memory" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Count_Memory" Type="nchar" MaxLength="3" Nullable="false" />
+          <Property Name="Count_RAM" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="RAM_frequency" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Timings" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Pic" Type="nchar" MaxLength="500" />
+          <Property Name="Coast" Type="int" />
+          <Property Name="Count" Type="int" />
+        </EntityType>
+        <EntityType Name="TovarToOrder">
+          <Key>
+            <PropertyRef Name="Id_TovarToOrder" />
+          </Key>
+          <Property Name="Id_TovarToOrder" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_User" Type="int" Nullable="false" />
+          <Property Name="Id_Case" Type="int" />
+          <Property Name="Id_Processor" Type="int" />
+          <Property Name="Id_HDD" Type="int" />
+          <Property Name="Id_Monitor" Type="int" />
+          <Property Name="Id_Motherboard" Type="int" />
+          <Property Name="Id_PowerUnit" Type="int" />
+          <Property Name="Id_RAM" Type="int" />
+          <Property Name="Id_VideoCard" Type="int" />
+          <Property Name="Id_Order" Type="int" />
+          <Property Name="Price" Type="int" />
+          <Property Name="Count" Type="int" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id_User" />
+          </Key>
+          <Property Name="Id_User" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Second_name" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="FIrst_name" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Father_name" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Date_of_Birth" Type="date" Nullable="false" />
+          <Property Name="Email" Type="nchar" MaxLength="40" Nullable="false" />
+          <Property Name="Phone_num" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="Login" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VideoCard">
+          <Key>
+            <PropertyRef Name="Id_VideoCard" />
+          </Key>
+          <Property Name="Id_VideoCard" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Model" Type="nchar" MaxLength="40" Nullable="false" />
+          <Property Name="Count_Memory" Type="nchar" MaxLength="3" Nullable="false" />
+          <Property Name="Type_Memory" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Memory_frequency" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Video_frequency" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Turbo" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Count_CPU" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Connector" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Conn_interface" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Power_Unit" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Pic" Type="nchar" MaxLength="500" />
+          <Property Name="Coast" Type="int" />
+          <Property Name="Count" Type="int" />
+        </EntityType>
+        <EntityType Name="Workers">
+          <Key>
+            <PropertyRef Name="Id_Worker" />
+          </Key>
+          <Property Name="Id_Worker" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Second_name" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="First_name" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Father_name" Type="nchar" MaxLength="20" />
+          <Property Name="Job" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Login" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Password" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Case">
+          <End Role="Cases" Type="Self.Cases" Multiplicity="0..1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="Id_Case" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="Id_Case" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Case2">
+          <End Role="Cases" Type="Self.Cases" Multiplicity="0..1" />
+          <End Role="TovarToOrder" Type="Self.TovarToOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="Id_Case" />
+            </Principal>
+            <Dependent Role="TovarToOrder">
+              <PropertyRef Name="Id_Case" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CPU">
+          <End Role="CPU" Type="Self.CPU" Multiplicity="0..1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CPU">
+              <PropertyRef Name="Id_Processor" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="Id_Processor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CPU2">
+          <End Role="CPU" Type="Self.CPU" Multiplicity="0..1" />
+          <End Role="TovarToOrder" Type="Self.TovarToOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CPU">
+              <PropertyRef Name="Id_Processor" />
+            </Principal>
+            <Dependent Role="TovarToOrder">
+              <PropertyRef Name="Id_Processor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HDD">
+          <End Role="HDD" Type="Self.HDD" Multiplicity="0..1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HDD">
+              <PropertyRef Name="Id_HDD" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="Id_HDD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HDD2">
+          <End Role="HDD" Type="Self.HDD" Multiplicity="0..1" />
+          <End Role="TovarToOrder" Type="Self.TovarToOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HDD">
+              <PropertyRef Name="Id_HDD" />
+            </Principal>
+            <Dependent Role="TovarToOrder">
+              <PropertyRef Name="Id_HDD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MB">
+          <End Role="Motherboard" Type="Self.Motherboard" Multiplicity="0..1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Motherboard">
+              <PropertyRef Name="Id_Motherboard" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="Id_Motherboard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MB2">
+          <End Role="Motherboard" Type="Self.Motherboard" Multiplicity="0..1" />
+          <End Role="TovarToOrder" Type="Self.TovarToOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Motherboard">
+              <PropertyRef Name="Id_Motherboard" />
+            </Principal>
+            <Dependent Role="TovarToOrder">
+              <PropertyRef Name="Id_Motherboard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Monitor">
+          <End Role="Monitor" Type="Self.Monitor" Multiplicity="0..1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Monitor">
+              <PropertyRef Name="Id_Monitor" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="Id_Monitor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Monitor2">
+          <End Role="Monitor" Type="Self.Monitor" Multiplicity="0..1" />
+          <End Role="TovarToOrder" Type="Self.TovarToOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Monitor">
+              <PropertyRef Name="Id_Monitor" />
+            </Principal>
+            <Dependent Role="TovarToOrder">
+              <PropertyRef Name="Id_Monitor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+          <End Role="TovarToOrder" Type="Self.TovarToOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="Id_Order" />
+            </Principal>
+            <Dependent Role="TovarToOrder">
+              <PropertyRef Name="Id_Order" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderToUser">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id_User" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="Id_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PickUp">
+          <End Role="PickUp" Type="Self.PickUp" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PickUp">
+              <PropertyRef Name="Id_PickUp" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="Id_PickUp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PU">
+          <End Role="PowerUnit" Type="Self.PowerUnit" Multiplicity="0..1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PowerUnit">
+              <PropertyRef Name="Id_PowerUnit" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="Id_PowerUnit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PU2">
+          <End Role="PowerUnit" Type="Self.PowerUnit" Multiplicity="0..1" />
+          <End Role="TovarToOrder" Type="Self.TovarToOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PowerUnit">
+              <PropertyRef Name="Id_PowerUnit" />
+            </Principal>
+            <Dependent Role="TovarToOrder">
+              <PropertyRef Name="Id_PowerUnit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAM">
+          <End Role="RAM" Type="Self.RAM" Multiplicity="0..1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RAM">
+              <PropertyRef Name="Id_RAM" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="Id_RAM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAM2">
+          <End Role="RAM" Type="Self.RAM" Multiplicity="0..1" />
+          <End Role="TovarToOrder" Type="Self.TovarToOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RAM">
+              <PropertyRef Name="Id_RAM" />
+            </Principal>
+            <Dependent Role="TovarToOrder">
+              <PropertyRef Name="Id_RAM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id_User" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="Id_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User2">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="TovarToOrder" Type="Self.TovarToOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id_User" />
+            </Principal>
+            <Dependent Role="TovarToOrder">
+              <PropertyRef Name="Id_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VC">
+          <End Role="VideoCard" Type="Self.VideoCard" Multiplicity="0..1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VideoCard">
+              <PropertyRef Name="Id_VideoCard" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="Id_VideoCard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VC2">
+          <End Role="VideoCard" Type="Self.VideoCard" Multiplicity="0..1" />
+          <End Role="TovarToOrder" Type="Self.TovarToOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VideoCard">
+              <PropertyRef Name="Id_VideoCard" />
+            </Principal>
+            <Dependent Role="TovarToOrder">
+              <PropertyRef Name="Id_VideoCard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище DiplomModelContainer">
+          <EntitySet Name="Basket" EntityType="Self.Basket" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cases" EntityType="Self.Cases" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CPU" EntityType="Self.CPU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HDD" EntityType="Self.HDD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Monitor" EntityType="Self.Monitor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Motherboard" EntityType="Self.Motherboard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PickUp" EntityType="Self.PickUp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PowerUnit" EntityType="Self.PowerUnit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RAM" EntityType="Self.RAM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TovarToOrder" EntityType="Self.TovarToOrder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VideoCard" EntityType="Self.VideoCard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Workers" EntityType="Self.Workers" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Case" Association="Self.FK_Case">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Case2" Association="Self.FK_Case2">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="TovarToOrder" EntitySet="TovarToOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CPU" Association="Self.FK_CPU">
+            <End Role="CPU" EntitySet="CPU" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CPU2" Association="Self.FK_CPU2">
+            <End Role="CPU" EntitySet="CPU" />
+            <End Role="TovarToOrder" EntitySet="TovarToOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HDD" Association="Self.FK_HDD">
+            <End Role="HDD" EntitySet="HDD" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HDD2" Association="Self.FK_HDD2">
+            <End Role="HDD" EntitySet="HDD" />
+            <End Role="TovarToOrder" EntitySet="TovarToOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MB" Association="Self.FK_MB">
+            <End Role="Motherboard" EntitySet="Motherboard" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MB2" Association="Self.FK_MB2">
+            <End Role="Motherboard" EntitySet="Motherboard" />
+            <End Role="TovarToOrder" EntitySet="TovarToOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Monitor" Association="Self.FK_Monitor">
+            <End Role="Monitor" EntitySet="Monitor" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Monitor2" Association="Self.FK_Monitor2">
+            <End Role="Monitor" EntitySet="Monitor" />
+            <End Role="TovarToOrder" EntitySet="TovarToOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order" Association="Self.FK_Order">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="TovarToOrder" EntitySet="TovarToOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderToUser" Association="Self.FK_OrderToUser">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PickUp" Association="Self.FK_PickUp">
+            <End Role="PickUp" EntitySet="PickUp" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PU" Association="Self.FK_PU">
+            <End Role="PowerUnit" EntitySet="PowerUnit" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PU2" Association="Self.FK_PU2">
+            <End Role="PowerUnit" EntitySet="PowerUnit" />
+            <End Role="TovarToOrder" EntitySet="TovarToOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAM" Association="Self.FK_RAM">
+            <End Role="RAM" EntitySet="RAM" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAM2" Association="Self.FK_RAM2">
+            <End Role="RAM" EntitySet="RAM" />
+            <End Role="TovarToOrder" EntitySet="TovarToOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User" Association="Self.FK_User">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User2" Association="Self.FK_User2">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TovarToOrder" EntitySet="TovarToOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VC" Association="Self.FK_VC">
+            <End Role="VideoCard" EntitySet="VideoCard" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VC2" Association="Self.FK_VC2">
+            <End Role="VideoCard" EntitySet="VideoCard" />
+            <End Role="TovarToOrder" EntitySet="TovarToOrder" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DiplomModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Basket">
+          <Key>
+            <PropertyRef Name="Id_Basket" />
+          </Key>
+          <Property Name="Id_Basket" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_User" Type="Int32" Nullable="false" />
+          <Property Name="Id_Case" Type="Int32" />
+          <Property Name="Id_Processor" Type="Int32" />
+          <Property Name="Id_HDD" Type="Int32" />
+          <Property Name="Id_Monitor" Type="Int32" />
+          <Property Name="Id_Motherboard" Type="Int32" />
+          <Property Name="Id_PowerUnit" Type="Int32" />
+          <Property Name="Id_RAM" Type="Int32" />
+          <Property Name="Id_VideoCard" Type="Int32" />
+          <Property Name="Count" Type="Int32" />
+          <NavigationProperty Name="Cases" Relationship="Self.FK_Case" FromRole="Basket" ToRole="Cases" />
+          <NavigationProperty Name="CPU" Relationship="Self.FK_CPU" FromRole="Basket" ToRole="CPU" />
+          <NavigationProperty Name="HDD" Relationship="Self.FK_HDD" FromRole="Basket" ToRole="HDD" />
+          <NavigationProperty Name="Motherboard" Relationship="Self.FK_MB" FromRole="Basket" ToRole="Motherboard" />
+          <NavigationProperty Name="Monitor" Relationship="Self.FK_Monitor" FromRole="Basket" ToRole="Monitor" />
+          <NavigationProperty Name="PowerUnit" Relationship="Self.FK_PU" FromRole="Basket" ToRole="PowerUnit" />
+          <NavigationProperty Name="RAM" Relationship="Self.FK_RAM" FromRole="Basket" ToRole="RAM" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_User" FromRole="Basket" ToRole="Users" />
+          <NavigationProperty Name="VideoCard" Relationship="Self.FK_VC" FromRole="Basket" ToRole="VideoCard" />
+        </EntityType>
+        <EntityType Name="Cases">
+          <Key>
+            <PropertyRef Name="Id_Case" />
+          </Key>
+          <Property Name="Id_Case" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Model" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Type_Case" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="FormMB" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="FormPU" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Pic" Type="String" MaxLength="500" FixedLength="true" Unicode="true" />
+          <Property Name="Coast" Type="Int32" />
+          <Property Name="Count" Type="Int32" />
+          <NavigationProperty Name="Basket" Relationship="Self.FK_Case" FromRole="Cases" ToRole="Basket" />
+          <NavigationProperty Name="TovarToOrder" Relationship="Self.FK_Case2" FromRole="Cases" ToRole="TovarToOrder" />
+        </EntityType>
+        <EntityType Name="CPU">
+          <Key>
+            <PropertyRef Name="Id_Processor" />
+          </Key>
+          <Property Name="Id_Processor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Model" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Soket" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Count_of_Cores" Type="String" MaxLength="2" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Num_of_Threads" Type="String" MaxLength="2" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Name_Core" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Base_CPU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Max_CPU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CPU_overclocking" Type="Boolean" Nullable="false" />
+          <Property Name="Max_Memory" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="TDP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Graphics_core" Type="Boolean" Nullable="false" />
+          <Property Name="Pic" Type="String" MaxLength="500" FixedLength="true" Unicode="true" />
+          <Property Name="Coast" Type="Int32" />
+          <Property Name="Count" Type="Int32" />
+          <NavigationProperty Name="Basket" Relationship="Self.FK_CPU" FromRole="CPU" ToRole="Basket" />
+          <NavigationProperty Name="TovarToOrder" Relationship="Self.FK_CPU2" FromRole="CPU" ToRole="TovarToOrder" />
+        </EntityType>
+        <EntityType Name="HDD">
+          <Key>
+            <PropertyRef Name="Id_HDD" />
+          </Key>
+          <Property Name="Id_HDD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Model" Type="String" MaxLength="40" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Count_Memory" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Max_Memory_Speed" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Interface" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Record" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Pic" Type="String" MaxLength="500" FixedLength="true" Unicode="true" />
+          <Property Name="Coast" Type="Int32" />
+          <Property Name="Count" Type="Int32" />
+          <NavigationProperty Name="Basket" Relationship="Self.FK_HDD" FromRole="HDD" ToRole="Basket" />
+          <NavigationProperty Name="TovarToOrder" Relationship="Self.FK_HDD2" FromRole="HDD" ToRole="TovarToOrder" />
+        </EntityType>
+        <EntityType Name="Monitor">
+          <Key>
+            <PropertyRef Name="Id_Monitor" />
+          </Key>
+          <Property Name="Id_Monitor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Model" Type="String" MaxLength="40" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Diagonal" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Type_Matrix" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Max_Resolution" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="frequency" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="VideoConn" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="PowerNeed" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Pic" Type="String" MaxLength="500" FixedLength="true" Unicode="true" />
+          <Property Name="Coast" Type="Int32" />
+          <Property Name="Count" Type="Int32" />
+          <NavigationProperty Name="Basket" Relationship="Self.FK_Monitor" FromRole="Monitor" ToRole="Basket" />
+          <NavigationProperty Name="TovarToOrder" Relationship="Self.FK_Monitor2" FromRole="Monitor" ToRole="TovarToOrder" />
+        </EntityType>
+        <EntityType Name="Motherboard">
+          <Key>
+            <PropertyRef Name="Id_Motherboard" />
+          </Key>
+          <Property Name="Id_Motherboard" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Model" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Form_factor" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Soket" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Memory_slots" Type="Int32" Nullable="false" />
+          <Property Name="Type_memory" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Max_memory" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Max_frequency" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Pic" Type="String" MaxLength="500" FixedLength="true" Unicode="true" />
+          <Property Name="Coast" Type="Int32" />
+          <Property Name="Count" Type="Int32" />
+          <NavigationProperty Name="Basket" Relationship="Self.FK_MB" FromRole="Motherboard" ToRole="Basket" />
+          <NavigationProperty Name="TovarToOrder" Relationship="Self.FK_MB2" FromRole="Motherboard" ToRole="TovarToOrder" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="Id_Order" />
+          </Key>
+          <Property Name="Id_Order" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="TimeOrder" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Status" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Id_User" Type="Int32" />
+          <Property Name="CodeOrder" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="Id_PickUp" Type="Int32" />
+          <NavigationProperty Name="TovarToOrder" Relationship="Self.FK_Order" FromRole="Orders" ToRole="TovarToOrder" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_OrderToUser" FromRole="Orders" ToRole="Users" />
+          <NavigationProperty Name="PickUp" Relationship="Self.FK_PickUp" FromRole="Orders" ToRole="PickUp" />
+        </EntityType>
+        <EntityType Name="PickUp">
+          <Key>
+            <PropertyRef Name="Id_PickUp" />
+          </Key>
+          <Property Name="Id_PickUp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Adress" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_PickUp" FromRole="PickUp" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="PowerUnit">
+          <Key>
+            <PropertyRef Name="Id_PowerUnit" />
+          </Key>
+          <Property Name="Id_PowerUnit" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Model" Type="String" MaxLength="40" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Power" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Form" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Sertificat" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="PowerConn" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="PowerConnCPU" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="PowerConnVideo" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Pic" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Coast" Type="Int32" />
+          <Property Name="Count" Type="Int32" />
+          <NavigationProperty Name="Basket" Relationship="Self.FK_PU" FromRole="PowerUnit" ToRole="Basket" />
+          <NavigationProperty Name="TovarToOrder" Relationship="Self.FK_PU2" FromRole="PowerUnit" ToRole="TovarToOrder" />
+        </EntityType>
+        <EntityType Name="RAM">
+          <Key>
+            <PropertyRef Name="Id_RAM" />
+          </Key>
+          <Property Name="Id_RAM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Model" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Type_Memory" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Count_Memory" Type="String" MaxLength="3" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Count_RAM" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="RAM_frequency" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Timings" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Pic" Type="String" MaxLength="500" FixedLength="true" Unicode="true" />
+          <Property Name="Coast" Type="Int32" />
+          <Property Name="Count" Type="Int32" />
+          <NavigationProperty Name="Basket" Relationship="Self.FK_RAM" FromRole="RAM" ToRole="Basket" />
+          <NavigationProperty Name="TovarToOrder" Relationship="Self.FK_RAM2" FromRole="RAM" ToRole="TovarToOrder" />
+        </EntityType>
+        <EntityType Name="TovarToOrder">
+          <Key>
+            <PropertyRef Name="Id_TovarToOrder" />
+          </Key>
+          <Property Name="Id_TovarToOrder" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_User" Type="Int32" Nullable="false" />
+          <Property Name="Id_Case" Type="Int32" />
+          <Property Name="Id_Processor" Type="Int32" />
+          <Property Name="Id_HDD" Type="Int32" />
+          <Property Name="Id_Monitor" Type="Int32" />
+          <Property Name="Id_Motherboard" Type="Int32" />
+          <Property Name="Id_PowerUnit" Type="Int32" />
+          <Property Name="Id_RAM" Type="Int32" />
+          <Property Name="Id_VideoCard" Type="Int32" />
+          <Property Name="Id_Order" Type="Int32" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Count" Type="Int32" />
+          <NavigationProperty Name="Cases" Relationship="Self.FK_Case2" FromRole="TovarToOrder" ToRole="Cases" />
+          <NavigationProperty Name="CPU" Relationship="Self.FK_CPU2" FromRole="TovarToOrder" ToRole="CPU" />
+          <NavigationProperty Name="HDD" Relationship="Self.FK_HDD2" FromRole="TovarToOrder" ToRole="HDD" />
+          <NavigationProperty Name="Monitor" Relationship="Self.FK_Monitor2" FromRole="TovarToOrder" ToRole="Monitor" />
+          <NavigationProperty Name="Motherboard" Relationship="Self.FK_MB2" FromRole="TovarToOrder" ToRole="Motherboard" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Order" FromRole="TovarToOrder" ToRole="Orders" />
+          <NavigationProperty Name="PowerUnit" Relationship="Self.FK_PU2" FromRole="TovarToOrder" ToRole="PowerUnit" />
+          <NavigationProperty Name="RAM" Relationship="Self.FK_RAM2" FromRole="TovarToOrder" ToRole="RAM" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_User2" FromRole="TovarToOrder" ToRole="Users" />
+          <NavigationProperty Name="VideoCard" Relationship="Self.FK_VC2" FromRole="TovarToOrder" ToRole="VideoCard" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id_User" />
+          </Key>
+          <Property Name="Id_User" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Second_name" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="FIrst_name" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Father_name" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Date_of_Birth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Email" Type="String" MaxLength="40" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Phone_num" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Basket" Relationship="Self.FK_User" FromRole="Users" ToRole="Basket" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_OrderToUser" FromRole="Users" ToRole="Orders" />
+          <NavigationProperty Name="TovarToOrder" Relationship="Self.FK_User2" FromRole="Users" ToRole="TovarToOrder" />
+        </EntityType>
+        <EntityType Name="VideoCard">
+          <Key>
+            <PropertyRef Name="Id_VideoCard" />
+          </Key>
+          <Property Name="Id_VideoCard" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Model" Type="String" MaxLength="40" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Count_Memory" Type="String" MaxLength="3" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Type_Memory" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Memory_frequency" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Video_frequency" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Turbo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Count_CPU" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Connector" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Conn_interface" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Power_Unit" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Pic" Type="String" MaxLength="500" FixedLength="true" Unicode="true" />
+          <Property Name="Coast" Type="Int32" />
+          <Property Name="Count" Type="Int32" />
+          <NavigationProperty Name="Basket" Relationship="Self.FK_VC" FromRole="VideoCard" ToRole="Basket" />
+          <NavigationProperty Name="TovarToOrder" Relationship="Self.FK_VC2" FromRole="VideoCard" ToRole="TovarToOrder" />
+        </EntityType>
+        <EntityType Name="Workers">
+          <Key>
+            <PropertyRef Name="Id_Worker" />
+          </Key>
+          <Property Name="Id_Worker" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Second_name" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="First_name" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Father_name" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Job" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Case">
+          <End Role="Cases" Type="Self.Cases" Multiplicity="0..1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="Id_Case" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="Id_Case" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CPU">
+          <End Role="CPU" Type="Self.CPU" Multiplicity="0..1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CPU">
+              <PropertyRef Name="Id_Processor" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="Id_Processor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HDD">
+          <End Role="HDD" Type="Self.HDD" Multiplicity="0..1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HDD">
+              <PropertyRef Name="Id_HDD" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="Id_HDD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MB">
+          <End Role="Motherboard" Type="Self.Motherboard" Multiplicity="0..1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Motherboard">
+              <PropertyRef Name="Id_Motherboard" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="Id_Motherboard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Monitor">
+          <End Role="Monitor" Type="Self.Monitor" Multiplicity="0..1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Monitor">
+              <PropertyRef Name="Id_Monitor" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="Id_Monitor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PU">
+          <End Role="PowerUnit" Type="Self.PowerUnit" Multiplicity="0..1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PowerUnit">
+              <PropertyRef Name="Id_PowerUnit" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="Id_PowerUnit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAM">
+          <End Role="RAM" Type="Self.RAM" Multiplicity="0..1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RAM">
+              <PropertyRef Name="Id_RAM" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="Id_RAM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id_User" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="Id_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VC">
+          <End Role="VideoCard" Type="Self.VideoCard" Multiplicity="0..1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VideoCard">
+              <PropertyRef Name="Id_VideoCard" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="Id_VideoCard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Case2">
+          <End Role="Cases" Type="Self.Cases" Multiplicity="0..1" />
+          <End Role="TovarToOrder" Type="Self.TovarToOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cases">
+              <PropertyRef Name="Id_Case" />
+            </Principal>
+            <Dependent Role="TovarToOrder">
+              <PropertyRef Name="Id_Case" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CPU2">
+          <End Role="CPU" Type="Self.CPU" Multiplicity="0..1" />
+          <End Role="TovarToOrder" Type="Self.TovarToOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CPU">
+              <PropertyRef Name="Id_Processor" />
+            </Principal>
+            <Dependent Role="TovarToOrder">
+              <PropertyRef Name="Id_Processor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HDD2">
+          <End Role="HDD" Type="Self.HDD" Multiplicity="0..1" />
+          <End Role="TovarToOrder" Type="Self.TovarToOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HDD">
+              <PropertyRef Name="Id_HDD" />
+            </Principal>
+            <Dependent Role="TovarToOrder">
+              <PropertyRef Name="Id_HDD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Monitor2">
+          <End Role="Monitor" Type="Self.Monitor" Multiplicity="0..1" />
+          <End Role="TovarToOrder" Type="Self.TovarToOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Monitor">
+              <PropertyRef Name="Id_Monitor" />
+            </Principal>
+            <Dependent Role="TovarToOrder">
+              <PropertyRef Name="Id_Monitor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MB2">
+          <End Role="Motherboard" Type="Self.Motherboard" Multiplicity="0..1" />
+          <End Role="TovarToOrder" Type="Self.TovarToOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Motherboard">
+              <PropertyRef Name="Id_Motherboard" />
+            </Principal>
+            <Dependent Role="TovarToOrder">
+              <PropertyRef Name="Id_Motherboard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+          <End Role="TovarToOrder" Type="Self.TovarToOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="Id_Order" />
+            </Principal>
+            <Dependent Role="TovarToOrder">
+              <PropertyRef Name="Id_Order" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderToUser">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id_User" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="Id_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PickUp">
+          <End Role="PickUp" Type="Self.PickUp" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PickUp">
+              <PropertyRef Name="Id_PickUp" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="Id_PickUp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PU2">
+          <End Role="PowerUnit" Type="Self.PowerUnit" Multiplicity="0..1" />
+          <End Role="TovarToOrder" Type="Self.TovarToOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PowerUnit">
+              <PropertyRef Name="Id_PowerUnit" />
+            </Principal>
+            <Dependent Role="TovarToOrder">
+              <PropertyRef Name="Id_PowerUnit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAM2">
+          <End Role="RAM" Type="Self.RAM" Multiplicity="0..1" />
+          <End Role="TovarToOrder" Type="Self.TovarToOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RAM">
+              <PropertyRef Name="Id_RAM" />
+            </Principal>
+            <Dependent Role="TovarToOrder">
+              <PropertyRef Name="Id_RAM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User2">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="TovarToOrder" Type="Self.TovarToOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id_User" />
+            </Principal>
+            <Dependent Role="TovarToOrder">
+              <PropertyRef Name="Id_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VC2">
+          <End Role="VideoCard" Type="Self.VideoCard" Multiplicity="0..1" />
+          <End Role="TovarToOrder" Type="Self.TovarToOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VideoCard">
+              <PropertyRef Name="Id_VideoCard" />
+            </Principal>
+            <Dependent Role="TovarToOrder">
+              <PropertyRef Name="Id_VideoCard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Basket" EntityType="Self.Basket" />
+          <EntitySet Name="Cases" EntityType="Self.Cases" />
+          <EntitySet Name="CPU" EntityType="Self.CPU" />
+          <EntitySet Name="HDD" EntityType="Self.HDD" />
+          <EntitySet Name="Monitor" EntityType="Self.Monitor" />
+          <EntitySet Name="Motherboard" EntityType="Self.Motherboard" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" />
+          <EntitySet Name="PickUp" EntityType="Self.PickUp" />
+          <EntitySet Name="PowerUnit" EntityType="Self.PowerUnit" />
+          <EntitySet Name="RAM" EntityType="Self.RAM" />
+          <EntitySet Name="TovarToOrder" EntityType="Self.TovarToOrder" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <EntitySet Name="VideoCard" EntityType="Self.VideoCard" />
+          <EntitySet Name="Workers" EntityType="Self.Workers" />
+          <AssociationSet Name="FK_Case" Association="Self.FK_Case">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CPU" Association="Self.FK_CPU">
+            <End Role="CPU" EntitySet="CPU" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HDD" Association="Self.FK_HDD">
+            <End Role="HDD" EntitySet="HDD" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MB" Association="Self.FK_MB">
+            <End Role="Motherboard" EntitySet="Motherboard" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Monitor" Association="Self.FK_Monitor">
+            <End Role="Monitor" EntitySet="Monitor" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PU" Association="Self.FK_PU">
+            <End Role="PowerUnit" EntitySet="PowerUnit" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAM" Association="Self.FK_RAM">
+            <End Role="RAM" EntitySet="RAM" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User" Association="Self.FK_User">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VC" Association="Self.FK_VC">
+            <End Role="VideoCard" EntitySet="VideoCard" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Case2" Association="Self.FK_Case2">
+            <End Role="Cases" EntitySet="Cases" />
+            <End Role="TovarToOrder" EntitySet="TovarToOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CPU2" Association="Self.FK_CPU2">
+            <End Role="CPU" EntitySet="CPU" />
+            <End Role="TovarToOrder" EntitySet="TovarToOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HDD2" Association="Self.FK_HDD2">
+            <End Role="HDD" EntitySet="HDD" />
+            <End Role="TovarToOrder" EntitySet="TovarToOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Monitor2" Association="Self.FK_Monitor2">
+            <End Role="Monitor" EntitySet="Monitor" />
+            <End Role="TovarToOrder" EntitySet="TovarToOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MB2" Association="Self.FK_MB2">
+            <End Role="Motherboard" EntitySet="Motherboard" />
+            <End Role="TovarToOrder" EntitySet="TovarToOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order" Association="Self.FK_Order">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="TovarToOrder" EntitySet="TovarToOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderToUser" Association="Self.FK_OrderToUser">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PickUp" Association="Self.FK_PickUp">
+            <End Role="PickUp" EntitySet="PickUp" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PU2" Association="Self.FK_PU2">
+            <End Role="PowerUnit" EntitySet="PowerUnit" />
+            <End Role="TovarToOrder" EntitySet="TovarToOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAM2" Association="Self.FK_RAM2">
+            <End Role="RAM" EntitySet="RAM" />
+            <End Role="TovarToOrder" EntitySet="TovarToOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User2" Association="Self.FK_User2">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TovarToOrder" EntitySet="TovarToOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VC2" Association="Self.FK_VC2">
+            <End Role="VideoCard" EntitySet="VideoCard" />
+            <End Role="TovarToOrder" EntitySet="TovarToOrder" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище DiplomModelContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Basket">
+            <EntityTypeMapping TypeName="DiplomModel.Basket">
+              <MappingFragment StoreEntitySet="Basket">
+                <ScalarProperty Name="Id_Basket" ColumnName="Id_Basket" />
+                <ScalarProperty Name="Id_User" ColumnName="Id_User" />
+                <ScalarProperty Name="Id_Case" ColumnName="Id_Case" />
+                <ScalarProperty Name="Id_Processor" ColumnName="Id_Processor" />
+                <ScalarProperty Name="Id_HDD" ColumnName="Id_HDD" />
+                <ScalarProperty Name="Id_Monitor" ColumnName="Id_Monitor" />
+                <ScalarProperty Name="Id_Motherboard" ColumnName="Id_Motherboard" />
+                <ScalarProperty Name="Id_PowerUnit" ColumnName="Id_PowerUnit" />
+                <ScalarProperty Name="Id_RAM" ColumnName="Id_RAM" />
+                <ScalarProperty Name="Id_VideoCard" ColumnName="Id_VideoCard" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cases">
+            <EntityTypeMapping TypeName="DiplomModel.Cases">
+              <MappingFragment StoreEntitySet="Cases">
+                <ScalarProperty Name="Id_Case" ColumnName="Id_Case" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Type_Case" ColumnName="Type_Case" />
+                <ScalarProperty Name="FormMB" ColumnName="FormMB" />
+                <ScalarProperty Name="FormPU" ColumnName="FormPU" />
+                <ScalarProperty Name="Pic" ColumnName="Pic" />
+                <ScalarProperty Name="Coast" ColumnName="Coast" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CPU">
+            <EntityTypeMapping TypeName="DiplomModel.CPU">
+              <MappingFragment StoreEntitySet="CPU">
+                <ScalarProperty Name="Id_Processor" ColumnName="Id_Processor" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Soket" ColumnName="Soket" />
+                <ScalarProperty Name="Count_of_Cores" ColumnName="Count_of_Cores" />
+                <ScalarProperty Name="Num_of_Threads" ColumnName="Num_of_Threads" />
+                <ScalarProperty Name="Name_Core" ColumnName="Name_Core" />
+                <ScalarProperty Name="Base_CPU" ColumnName="Base_CPU" />
+                <ScalarProperty Name="Max_CPU" ColumnName="Max_CPU" />
+                <ScalarProperty Name="CPU_overclocking" ColumnName="CPU_overclocking" />
+                <ScalarProperty Name="Max_Memory" ColumnName="Max_Memory" />
+                <ScalarProperty Name="TDP" ColumnName="TDP" />
+                <ScalarProperty Name="Graphics_core" ColumnName="Graphics_core" />
+                <ScalarProperty Name="Pic" ColumnName="Pic" />
+                <ScalarProperty Name="Coast" ColumnName="Coast" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HDD">
+            <EntityTypeMapping TypeName="DiplomModel.HDD">
+              <MappingFragment StoreEntitySet="HDD">
+                <ScalarProperty Name="Id_HDD" ColumnName="Id_HDD" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Count_Memory" ColumnName="Count_Memory" />
+                <ScalarProperty Name="Max_Memory_Speed" ColumnName="Max_Memory_Speed" />
+                <ScalarProperty Name="Interface" ColumnName="Interface" />
+                <ScalarProperty Name="Record" ColumnName="Record" />
+                <ScalarProperty Name="Pic" ColumnName="Pic" />
+                <ScalarProperty Name="Coast" ColumnName="Coast" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Monitor">
+            <EntityTypeMapping TypeName="DiplomModel.Monitor">
+              <MappingFragment StoreEntitySet="Monitor">
+                <ScalarProperty Name="Id_Monitor" ColumnName="Id_Monitor" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Diagonal" ColumnName="Diagonal" />
+                <ScalarProperty Name="Type_Matrix" ColumnName="Type_Matrix" />
+                <ScalarProperty Name="Max_Resolution" ColumnName="Max_Resolution" />
+                <ScalarProperty Name="frequency" ColumnName="frequency" />
+                <ScalarProperty Name="VideoConn" ColumnName="VideoConn" />
+                <ScalarProperty Name="PowerNeed" ColumnName="PowerNeed" />
+                <ScalarProperty Name="Pic" ColumnName="Pic" />
+                <ScalarProperty Name="Coast" ColumnName="Coast" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Motherboard">
+            <EntityTypeMapping TypeName="DiplomModel.Motherboard">
+              <MappingFragment StoreEntitySet="Motherboard">
+                <ScalarProperty Name="Id_Motherboard" ColumnName="Id_Motherboard" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Form_factor" ColumnName="Form_factor" />
+                <ScalarProperty Name="Soket" ColumnName="Soket" />
+                <ScalarProperty Name="Memory_slots" ColumnName="Memory_slots" />
+                <ScalarProperty Name="Type_memory" ColumnName="Type_memory" />
+                <ScalarProperty Name="Max_memory" ColumnName="Max_memory" />
+                <ScalarProperty Name="Max_frequency" ColumnName="Max_frequency" />
+                <ScalarProperty Name="Pic" ColumnName="Pic" />
+                <ScalarProperty Name="Coast" ColumnName="Coast" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="DiplomModel.Orders">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="Id_Order" ColumnName="Id_Order" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="TimeOrder" ColumnName="TimeOrder" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Id_User" ColumnName="Id_User" />
+                <ScalarProperty Name="CodeOrder" ColumnName="CodeOrder" />
+                <ScalarProperty Name="Id_PickUp" ColumnName="Id_PickUp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PickUp">
+            <EntityTypeMapping TypeName="DiplomModel.PickUp">
+              <MappingFragment StoreEntitySet="PickUp">
+                <ScalarProperty Name="Id_PickUp" ColumnName="Id_PickUp" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PowerUnit">
+            <EntityTypeMapping TypeName="DiplomModel.PowerUnit">
+              <MappingFragment StoreEntitySet="PowerUnit">
+                <ScalarProperty Name="Id_PowerUnit" ColumnName="Id_PowerUnit" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Power" ColumnName="Power" />
+                <ScalarProperty Name="Form" ColumnName="Form" />
+                <ScalarProperty Name="Sertificat" ColumnName="Sertificat" />
+                <ScalarProperty Name="PowerConn" ColumnName="PowerConn" />
+                <ScalarProperty Name="PowerConnCPU" ColumnName="PowerConnCPU" />
+                <ScalarProperty Name="PowerConnVideo" ColumnName="PowerConnVideo" />
+                <ScalarProperty Name="Pic" ColumnName="Pic" />
+                <ScalarProperty Name="Coast" ColumnName="Coast" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RAM">
+            <EntityTypeMapping TypeName="DiplomModel.RAM">
+              <MappingFragment StoreEntitySet="RAM">
+                <ScalarProperty Name="Id_RAM" ColumnName="Id_RAM" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Type_Memory" ColumnName="Type_Memory" />
+                <ScalarProperty Name="Count_Memory" ColumnName="Count_Memory" />
+                <ScalarProperty Name="Count_RAM" ColumnName="Count_RAM" />
+                <ScalarProperty Name="RAM_frequency" ColumnName="RAM_frequency" />
+                <ScalarProperty Name="Timings" ColumnName="Timings" />
+                <ScalarProperty Name="Pic" ColumnName="Pic" />
+                <ScalarProperty Name="Coast" ColumnName="Coast" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TovarToOrder">
+            <EntityTypeMapping TypeName="DiplomModel.TovarToOrder">
+              <MappingFragment StoreEntitySet="TovarToOrder">
+                <ScalarProperty Name="Id_TovarToOrder" ColumnName="Id_TovarToOrder" />
+                <ScalarProperty Name="Id_User" ColumnName="Id_User" />
+                <ScalarProperty Name="Id_Case" ColumnName="Id_Case" />
+                <ScalarProperty Name="Id_Processor" ColumnName="Id_Processor" />
+                <ScalarProperty Name="Id_HDD" ColumnName="Id_HDD" />
+                <ScalarProperty Name="Id_Monitor" ColumnName="Id_Monitor" />
+                <ScalarProperty Name="Id_Motherboard" ColumnName="Id_Motherboard" />
+                <ScalarProperty Name="Id_PowerUnit" ColumnName="Id_PowerUnit" />
+                <ScalarProperty Name="Id_RAM" ColumnName="Id_RAM" />
+                <ScalarProperty Name="Id_VideoCard" ColumnName="Id_VideoCard" />
+                <ScalarProperty Name="Id_Order" ColumnName="Id_Order" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="DiplomModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Id_User" ColumnName="Id_User" />
+                <ScalarProperty Name="Second_name" ColumnName="Second_name" />
+                <ScalarProperty Name="FIrst_name" ColumnName="FIrst_name" />
+                <ScalarProperty Name="Father_name" ColumnName="Father_name" />
+                <ScalarProperty Name="Date_of_Birth" ColumnName="Date_of_Birth" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone_num" ColumnName="Phone_num" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VideoCard">
+            <EntityTypeMapping TypeName="DiplomModel.VideoCard">
+              <MappingFragment StoreEntitySet="VideoCard">
+                <ScalarProperty Name="Id_VideoCard" ColumnName="Id_VideoCard" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Count_Memory" ColumnName="Count_Memory" />
+                <ScalarProperty Name="Type_Memory" ColumnName="Type_Memory" />
+                <ScalarProperty Name="Memory_frequency" ColumnName="Memory_frequency" />
+                <ScalarProperty Name="Video_frequency" ColumnName="Video_frequency" />
+                <ScalarProperty Name="Turbo" ColumnName="Turbo" />
+                <ScalarProperty Name="Count_CPU" ColumnName="Count_CPU" />
+                <ScalarProperty Name="Connector" ColumnName="Connector" />
+                <ScalarProperty Name="Conn_interface" ColumnName="Conn_interface" />
+                <ScalarProperty Name="Power_Unit" ColumnName="Power_Unit" />
+                <ScalarProperty Name="Pic" ColumnName="Pic" />
+                <ScalarProperty Name="Coast" ColumnName="Coast" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Workers">
+            <EntityTypeMapping TypeName="DiplomModel.Workers">
+              <MappingFragment StoreEntitySet="Workers">
+                <ScalarProperty Name="Id_Worker" ColumnName="Id_Worker" />
+                <ScalarProperty Name="Second_name" ColumnName="Second_name" />
+                <ScalarProperty Name="First_name" ColumnName="First_name" />
+                <ScalarProperty Name="Father_name" ColumnName="Father_name" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

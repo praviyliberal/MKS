@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3ba9f24084044a26aa77810be7afcf80" Name="Diagram1">
+        <EntityTypeShape EntityType="DiplomModel.Basket" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiplomModel.Cases" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiplomModel.CPU" Width="1.5" PointX="0.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiplomModel.HDD" Width="1.5" PointX="0.75" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiplomModel.Monitor" Width="1.5" PointX="0.75" PointY="23.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiplomModel.Motherboard" Width="1.5" PointX="0.75" PointY="27.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiplomModel.Orders" Width="1.5" PointX="6" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiplomModel.PickUp" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiplomModel.PowerUnit" Width="1.5" PointX="0.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiplomModel.RAM" Width="1.5" PointX="0.75" PointY="36" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiplomModel.TovarToOrder" Width="1.5" PointX="8.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiplomModel.Users" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiplomModel.VideoCard" Width="1.5" PointX="0.75" PointY="40.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiplomModel.Workers" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="DiplomModel.FK_Case" ManuallyRouted="false" />
+        <AssociationConnector Association="DiplomModel.FK_CPU" ManuallyRouted="false" />
+        <AssociationConnector Association="DiplomModel.FK_HDD" ManuallyRouted="false" />
+        <AssociationConnector Association="DiplomModel.FK_MB" ManuallyRouted="false" />
+        <AssociationConnector Association="DiplomModel.FK_Monitor" ManuallyRouted="false" />
+        <AssociationConnector Association="DiplomModel.FK_PU" ManuallyRouted="false" />
+        <AssociationConnector Association="DiplomModel.FK_RAM" ManuallyRouted="false" />
+        <AssociationConnector Association="DiplomModel.FK_User" ManuallyRouted="false" />
+        <AssociationConnector Association="DiplomModel.FK_VC" ManuallyRouted="false" />
+        <AssociationConnector Association="DiplomModel.FK_Case2" ManuallyRouted="false" />
+        <AssociationConnector Association="DiplomModel.FK_CPU2" ManuallyRouted="false" />
+        <AssociationConnector Association="DiplomModel.FK_HDD2" ManuallyRouted="false" />
+        <AssociationConnector Association="DiplomModel.FK_Monitor2" ManuallyRouted="false" />
+        <AssociationConnector Association="DiplomModel.FK_MB2" ManuallyRouted="false" />
+        <AssociationConnector Association="DiplomModel.FK_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="DiplomModel.FK_OrderToUser" ManuallyRouted="false" />
+        <AssociationConnector Association="DiplomModel.FK_PickUp" ManuallyRouted="false" />
+        <AssociationConnector Association="DiplomModel.FK_PU2" ManuallyRouted="false" />
+        <AssociationConnector Association="DiplomModel.FK_RAM2" ManuallyRouted="false" />
+        <AssociationConnector Association="DiplomModel.FK_User2" ManuallyRouted="false" />
+        <AssociationConnector Association="DiplomModel.FK_VC2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

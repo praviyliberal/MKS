@@ -1,0 +1,48 @@
+﻿<Window x:Class="WpfApp3.Orders_Window" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d" Icon="logo_main.jpg"
+        Title="Заказы" Height="720" Width="1280">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="65"></RowDefinition>
+            <RowDefinition/>
+            <RowDefinition Height="45"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border BorderThickness ="0,0,0,3" BorderBrush="Black" Background="Wheat"/>
+        <Image x:Name="go_back" Source="logo_main.jpg" HorizontalAlignment="Left" Width="70" MouseLeftButtonDown="go_back_MouseLeftButtonDown"/>
+        <TextBlock Text="Заказы" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontFamily="Tahoma" Height="36" Width="100"/>
+        <Border Grid.Row="2" BorderThickness ="0,3,0,0" BorderBrush="Black" Margin="0,5,0,0">
+            <Grid Background="Wheat"/>
+        </Border>
+        <ListView x:Name="products_list" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,220,0" MouseDoubleClick="product_list_MouseDoubleClick">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="100" DisplayMemberBinding="{Binding Path=Price}" Header="Стоимость"/>
+                    <GridViewColumn Width="100" DisplayMemberBinding="{Binding Path=Status}" Header="Статус заказа"/>
+                    <GridViewColumn Width="200" DisplayMemberBinding="{Binding Path=TimeOrder}" Header="Дата заказа"/>
+                    <GridViewColumn Width="200" DisplayMemberBinding="{Binding Path=PickUp.Name}" Header="Пункт выдачи"/>
+                    <GridViewColumn Width="150" DisplayMemberBinding="{Binding Path=Users.Second_name}" Header="Фамилия"/>
+                    <GridViewColumn Width="150" DisplayMemberBinding="{Binding Path=Users.FIrst_name}" Header="Имя"/>
+                    <GridViewColumn Width="150" DisplayMemberBinding="{Binding Path=Users.Father_name}" Header="Отчество"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <CheckBox x:Name="YesOrder" FontSize="20" Content="Полученные" HorizontalAlignment="Left" Margin="1090,57,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="YesOrder_Checked"/>
+        <CheckBox x:Name="NoOrder" FontSize="20" Content="В пути" HorizontalAlignment="Left" Margin="1090,88,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="NoOrder_Checked"/>
+        <Label FontSize="20" Content="Заказы:" HorizontalAlignment="Left" Margin="1090,10,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <CheckBox x:Name="AllOrder" FontSize="20" Content="Все" HorizontalAlignment="Left" Margin="1090,119,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="AllOrder_Checked"/>
+        <Button x:Name="OrdersInfoButton" Content="Информация о продажах" HorizontalAlignment="Left" Margin="1098,424,0,0" Grid.Row="1" VerticalAlignment="Top" Height="35" Width="160" Click="OrdersInfoButton_Click"/>
+        <DatePicker x:Name="StartDate" HorizontalAlignment="Left" Margin="1124,295,0,0" Grid.Row="1" VerticalAlignment="Top" Width="113"/>
+        <Label x:Name="InfoLabel1" FontSize="16" Content="Информация о продажах" HorizontalAlignment="Left" Margin="1075,184,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="InfoLabel2" FontSize="16" Content="Начальная дата" HorizontalAlignment="Left" Margin="1120,252,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="InfoLabel3" FontSize="16" Content="Конечная дата" HorizontalAlignment="Left" Margin="1120,329,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <DatePicker x:Name="EndDate" HorizontalAlignment="Left" Margin="1124,365,0,0" Grid.Row="1" VerticalAlignment="Top" Width="113"/>
+        <TextBox x:Name="SearchUsers" HorizontalAlignment="Left" Margin="745,25,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="413" Height="30"/>
+        <Label x:Name="SLabel" Content="Поиск по фамилии и имени" HorizontalAlignment="Left" Margin="745,0,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="SearchButtonFIO" Content="Поиск" HorizontalAlignment="Left" Margin="1186,25,0,0" VerticalAlignment="Top" Height="30" Width="59" Click="SearchButtonFIO_Click"/>
+    </Grid>
+</Window>
