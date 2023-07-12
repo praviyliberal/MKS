@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище DiplomModelContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Basket">
+      <EntityTypeMapping TypeName="DiplomModel.Basket">
+        <MappingFragment StoreEntitySet="Basket">
+          <ScalarProperty Name="Id_Basket" ColumnName="Id_Basket" />
+          <ScalarProperty Name="Id_User" ColumnName="Id_User" />
+          <ScalarProperty Name="Id_Case" ColumnName="Id_Case" />
+          <ScalarProperty Name="Id_Processor" ColumnName="Id_Processor" />
+          <ScalarProperty Name="Id_HDD" ColumnName="Id_HDD" />
+          <ScalarProperty Name="Id_Monitor" ColumnName="Id_Monitor" />
+          <ScalarProperty Name="Id_Motherboard" ColumnName="Id_Motherboard" />
+          <ScalarProperty Name="Id_PowerUnit" ColumnName="Id_PowerUnit" />
+          <ScalarProperty Name="Id_RAM" ColumnName="Id_RAM" />
+          <ScalarProperty Name="Id_VideoCard" ColumnName="Id_VideoCard" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cases">
+      <EntityTypeMapping TypeName="DiplomModel.Cases">
+        <MappingFragment StoreEntitySet="Cases">
+          <ScalarProperty Name="Id_Case" ColumnName="Id_Case" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Type_Case" ColumnName="Type_Case" />
+          <ScalarProperty Name="FormMB" ColumnName="FormMB" />
+          <ScalarProperty Name="FormPU" ColumnName="FormPU" />
+          <ScalarProperty Name="Pic" ColumnName="Pic" />
+          <ScalarProperty Name="Coast" ColumnName="Coast" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CPU">
+      <EntityTypeMapping TypeName="DiplomModel.CPU">
+        <MappingFragment StoreEntitySet="CPU">
+          <ScalarProperty Name="Id_Processor" ColumnName="Id_Processor" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Soket" ColumnName="Soket" />
+          <ScalarProperty Name="Count_of_Cores" ColumnName="Count_of_Cores" />
+          <ScalarProperty Name="Num_of_Threads" ColumnName="Num_of_Threads" />
+          <ScalarProperty Name="Name_Core" ColumnName="Name_Core" />
+          <ScalarProperty Name="Base_CPU" ColumnName="Base_CPU" />
+          <ScalarProperty Name="Max_CPU" ColumnName="Max_CPU" />
+          <ScalarProperty Name="CPU_overclocking" ColumnName="CPU_overclocking" />
+          <ScalarProperty Name="Max_Memory" ColumnName="Max_Memory" />
+          <ScalarProperty Name="TDP" ColumnName="TDP" />
+          <ScalarProperty Name="Graphics_core" ColumnName="Graphics_core" />
+          <ScalarProperty Name="Pic" ColumnName="Pic" />
+          <ScalarProperty Name="Coast" ColumnName="Coast" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HDD">
+      <EntityTypeMapping TypeName="DiplomModel.HDD">
+        <MappingFragment StoreEntitySet="HDD">
+          <ScalarProperty Name="Id_HDD" ColumnName="Id_HDD" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Count_Memory" ColumnName="Count_Memory" />
+          <ScalarProperty Name="Max_Memory_Speed" ColumnName="Max_Memory_Speed" />
+          <ScalarProperty Name="Interface" ColumnName="Interface" />
+          <ScalarProperty Name="Record" ColumnName="Record" />
+          <ScalarProperty Name="Pic" ColumnName="Pic" />
+          <ScalarProperty Name="Coast" ColumnName="Coast" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Monitor">
+      <EntityTypeMapping TypeName="DiplomModel.Monitor">
+        <MappingFragment StoreEntitySet="Monitor">
+          <ScalarProperty Name="Id_Monitor" ColumnName="Id_Monitor" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Diagonal" ColumnName="Diagonal" />
+          <ScalarProperty Name="Type_Matrix" ColumnName="Type_Matrix" />
+          <ScalarProperty Name="Max_Resolution" ColumnName="Max_Resolution" />
+          <ScalarProperty Name="frequency" ColumnName="frequency" />
+          <ScalarProperty Name="VideoConn" ColumnName="VideoConn" />
+          <ScalarProperty Name="PowerNeed" ColumnName="PowerNeed" />
+          <ScalarProperty Name="Pic" ColumnName="Pic" />
+          <ScalarProperty Name="Coast" ColumnName="Coast" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Motherboard">
+      <EntityTypeMapping TypeName="DiplomModel.Motherboard">
+        <MappingFragment StoreEntitySet="Motherboard">
+          <ScalarProperty Name="Id_Motherboard" ColumnName="Id_Motherboard" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Form_factor" ColumnName="Form_factor" />
+          <ScalarProperty Name="Soket" ColumnName="Soket" />
+          <ScalarProperty Name="Memory_slots" ColumnName="Memory_slots" />
+          <ScalarProperty Name="Type_memory" ColumnName="Type_memory" />
+          <ScalarProperty Name="Max_memory" ColumnName="Max_memory" />
+          <ScalarProperty Name="Max_frequency" ColumnName="Max_frequency" />
+          <ScalarProperty Name="Pic" ColumnName="Pic" />
+          <ScalarProperty Name="Coast" ColumnName="Coast" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="DiplomModel.Orders">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="Id_Order" ColumnName="Id_Order" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="TimeOrder" ColumnName="TimeOrder" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Id_User" ColumnName="Id_User" />
+          <ScalarProperty Name="CodeOrder" ColumnName="CodeOrder" />
+          <ScalarProperty Name="Id_PickUp" ColumnName="Id_PickUp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PickUp">
+      <EntityTypeMapping TypeName="DiplomModel.PickUp">
+        <MappingFragment StoreEntitySet="PickUp">
+          <ScalarProperty Name="Id_PickUp" ColumnName="Id_PickUp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PowerUnit">
+      <EntityTypeMapping TypeName="DiplomModel.PowerUnit">
+        <MappingFragment StoreEntitySet="PowerUnit">
+          <ScalarProperty Name="Id_PowerUnit" ColumnName="Id_PowerUnit" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Power" ColumnName="Power" />
+          <ScalarProperty Name="Form" ColumnName="Form" />
+          <ScalarProperty Name="Sertificat" ColumnName="Sertificat" />
+          <ScalarProperty Name="PowerConn" ColumnName="PowerConn" />
+          <ScalarProperty Name="PowerConnCPU" ColumnName="PowerConnCPU" />
+          <ScalarProperty Name="PowerConnVideo" ColumnName="PowerConnVideo" />
+          <ScalarProperty Name="Pic" ColumnName="Pic" />
+          <ScalarProperty Name="Coast" ColumnName="Coast" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RAM">
+      <EntityTypeMapping TypeName="DiplomModel.RAM">
+        <MappingFragment StoreEntitySet="RAM">
+          <ScalarProperty Name="Id_RAM" ColumnName="Id_RAM" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Type_Memory" ColumnName="Type_Memory" />
+          <ScalarProperty Name="Count_Memory" ColumnName="Count_Memory" />
+          <ScalarProperty Name="Count_RAM" ColumnName="Count_RAM" />
+          <ScalarProperty Name="RAM_frequency" ColumnName="RAM_frequency" />
+          <ScalarProperty Name="Timings" ColumnName="Timings" />
+          <ScalarProperty Name="Pic" ColumnName="Pic" />
+          <ScalarProperty Name="Coast" ColumnName="Coast" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TovarToOrder">
+      <EntityTypeMapping TypeName="DiplomModel.TovarToOrder">
+        <MappingFragment StoreEntitySet="TovarToOrder">
+          <ScalarProperty Name="Id_TovarToOrder" ColumnName="Id_TovarToOrder" />
+          <ScalarProperty Name="Id_User" ColumnName="Id_User" />
+          <ScalarProperty Name="Id_Case" ColumnName="Id_Case" />
+          <ScalarProperty Name="Id_Processor" ColumnName="Id_Processor" />
+          <ScalarProperty Name="Id_HDD" ColumnName="Id_HDD" />
+          <ScalarProperty Name="Id_Monitor" ColumnName="Id_Monitor" />
+          <ScalarProperty Name="Id_Motherboard" ColumnName="Id_Motherboard" />
+          <ScalarProperty Name="Id_PowerUnit" ColumnName="Id_PowerUnit" />
+          <ScalarProperty Name="Id_RAM" ColumnName="Id_RAM" />
+          <ScalarProperty Name="Id_VideoCard" ColumnName="Id_VideoCard" />
+          <ScalarProperty Name="Id_Order" ColumnName="Id_Order" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="DiplomModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id_User" ColumnName="Id_User" />
+          <ScalarProperty Name="Second_name" ColumnName="Second_name" />
+          <ScalarProperty Name="FIrst_name" ColumnName="FIrst_name" />
+          <ScalarProperty Name="Father_name" ColumnName="Father_name" />
+          <ScalarProperty Name="Date_of_Birth" ColumnName="Date_of_Birth" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone_num" ColumnName="Phone_num" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VideoCard">
+      <EntityTypeMapping TypeName="DiplomModel.VideoCard">
+        <MappingFragment StoreEntitySet="VideoCard">
+          <ScalarProperty Name="Id_VideoCard" ColumnName="Id_VideoCard" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Count_Memory" ColumnName="Count_Memory" />
+          <ScalarProperty Name="Type_Memory" ColumnName="Type_Memory" />
+          <ScalarProperty Name="Memory_frequency" ColumnName="Memory_frequency" />
+          <ScalarProperty Name="Video_frequency" ColumnName="Video_frequency" />
+          <ScalarProperty Name="Turbo" ColumnName="Turbo" />
+          <ScalarProperty Name="Count_CPU" ColumnName="Count_CPU" />
+          <ScalarProperty Name="Connector" ColumnName="Connector" />
+          <ScalarProperty Name="Conn_interface" ColumnName="Conn_interface" />
+          <ScalarProperty Name="Power_Unit" ColumnName="Power_Unit" />
+          <ScalarProperty Name="Pic" ColumnName="Pic" />
+          <ScalarProperty Name="Coast" ColumnName="Coast" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Workers">
+      <EntityTypeMapping TypeName="DiplomModel.Workers">
+        <MappingFragment StoreEntitySet="Workers">
+          <ScalarProperty Name="Id_Worker" ColumnName="Id_Worker" />
+          <ScalarProperty Name="Second_name" ColumnName="Second_name" />
+          <ScalarProperty Name="First_name" ColumnName="First_name" />
+          <ScalarProperty Name="Father_name" ColumnName="Father_name" />
+          <ScalarProperty Name="Job" ColumnName="Job" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

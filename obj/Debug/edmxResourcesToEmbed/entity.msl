@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище kursModelContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Basket">
+      <EntityTypeMapping TypeName="kursModel.Basket">
+        <MappingFragment StoreEntitySet="Basket">
+          <ScalarProperty Name="Id_Basket" ColumnName="Id_Basket" />
+          <ScalarProperty Name="Id_Customer" ColumnName="Id_Customer" />
+          <ScalarProperty Name="Id_Product" ColumnName="Id_Product" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="kursModel.Customers">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="Id_Customer" ColumnName="Id_Customer" />
+          <ScalarProperty Name="Second_name" ColumnName="Second_name" />
+          <ScalarProperty Name="FIrst_name" ColumnName="FIrst_name" />
+          <ScalarProperty Name="Father_name" ColumnName="Father_name" />
+          <ScalarProperty Name="Date_of_Birth" ColumnName="Date_of_Birth" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone_num" ColumnName="Phone_num" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="kursModel.Orders">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="Id_Order" ColumnName="Id_Order" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Type_payment" ColumnName="Type_payment" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Id_Worker" ColumnName="Id_Worker" />
+          <ScalarProperty Name="Id_Customer" ColumnName="Id_Customer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="kursModel.Products">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="Id_Product" ColumnName="Id_Product" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type_of_Product" ColumnName="Type_of_Product" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="Pic" ColumnName="Pic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Workers">
+      <EntityTypeMapping TypeName="kursModel.Workers">
+        <MappingFragment StoreEntitySet="Workers">
+          <ScalarProperty Name="Id_Worker" ColumnName="Id_Worker" />
+          <ScalarProperty Name="Second_name" ColumnName="Second_name" />
+          <ScalarProperty Name="First_name" ColumnName="First_name" />
+          <ScalarProperty Name="Father_name" ColumnName="Father_name" />
+          <ScalarProperty Name="Job" ColumnName="Job" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

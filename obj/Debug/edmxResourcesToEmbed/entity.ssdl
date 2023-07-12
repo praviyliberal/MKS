@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище kursModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Basket">
+    <Key>
+      <PropertyRef Name="Id_Basket" />
+    </Key>
+    <Property Name="Id_Basket" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Customer" Type="int" Nullable="false" />
+    <Property Name="Id_Product" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="Id_Customer" />
+    </Key>
+    <Property Name="Id_Customer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Second_name" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="FIrst_name" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Father_name" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Date_of_Birth" Type="date" Nullable="false" />
+    <Property Name="Email" Type="nchar" MaxLength="40" Nullable="false" />
+    <Property Name="Phone_num" Type="nchar" MaxLength="11" Nullable="false" />
+    <Property Name="Login" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Password" Type="nchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="Id_Order" />
+    </Key>
+    <Property Name="Id_Order" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+    <Property Name="Type_payment" Type="bit" Nullable="false" />
+    <Property Name="Status" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Id_Worker" Type="int" />
+    <Property Name="Id_Customer" Type="int" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="Id_Product" />
+    </Key>
+    <Property Name="Id_Product" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="40" Nullable="false" />
+    <Property Name="Type_of_Product" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
+    <Property Name="Pic" Type="nchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Workers">
+    <Key>
+      <PropertyRef Name="Id_Worker" />
+    </Key>
+    <Property Name="Id_Worker" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Second_name" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="First_name" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Father_name" Type="nchar" MaxLength="20" />
+    <Property Name="Job" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="Login" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Password" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Basket1">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+    <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="Id_Customer" />
+      </Principal>
+      <Dependent Role="Basket">
+        <PropertyRef Name="Id_Customer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Basket2">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Id_Product" />
+      </Principal>
+      <Dependent Role="Basket">
+        <PropertyRef Name="Id_Product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders">
+    <End Role="Workers" Type="Self.Workers" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Workers">
+        <PropertyRef Name="Id_Worker" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="Id_Worker" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders2">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="Id_Customer" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="Id_Customer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище kursModelContainer">
+    <EntitySet Name="Basket" EntityType="Self.Basket" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Workers" EntityType="Self.Workers" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Basket1" Association="Self.FK_Basket1">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Basket" EntitySet="Basket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Basket2" Association="Self.FK_Basket2">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Basket" EntitySet="Basket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders" Association="Self.FK_Orders">
+      <End Role="Workers" EntitySet="Workers" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders2" Association="Self.FK_Orders2">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

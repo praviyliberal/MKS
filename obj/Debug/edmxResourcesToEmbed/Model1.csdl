@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="kursModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Basket">
+    <Key>
+      <PropertyRef Name="Id_Basket" />
+    </Key>
+    <Property Name="Id_Customer" Type="Int32" Nullable="false" />
+    <Property Name="Id_Order" Type="Int32" Nullable="false" />
+    <Property Name="Id_Basket" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_Busket" FromRole="Basket" ToRole="Orders" />
+    <NavigationProperty Name="Customers" Relationship="Self.FK_Busket3" FromRole="Basket" ToRole="Customers" />
+    <NavigationProperty Name="Products" Relationship="Self.Fk_Products" FromRole="Basket" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="Id_Customer" />
+    </Key>
+    <Property Name="Id_Customer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Second_name" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="FIrst_name" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Father_name" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Date_of_Birth" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Email" Type="String" MaxLength="40" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Phone_num" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Login" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Basket" Relationship="Self.FK_Busket3" FromRole="Customers" ToRole="Basket" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="Id_Order" />
+    </Key>
+    <Property Name="Id_Order" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="Type_payment" Type="Boolean" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Id_Basket" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Basket" Relationship="Self.FK_Busket" FromRole="Orders" ToRole="Basket" />
+    <NavigationProperty Name="Workers" Relationship="Self.FK_Order" FromRole="Orders" ToRole="Workers" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="Id_Product" />
+    </Key>
+    <Property Name="Id_Product" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Type_of_Product" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="Count" Type="Int32" Nullable="false" />
+    <Property Name="Pic" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="Id_Basket" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Basket" Relationship="Self.Fk_Products" FromRole="Products" ToRole="Basket" />
+  </EntityType>
+  <EntityType Name="Workers">
+    <Key>
+      <PropertyRef Name="Id_Worker" />
+    </Key>
+    <Property Name="Id_Worker" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Second_name" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="First_name" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Father_name" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Job" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Id_Order" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_Order" FromRole="Workers" ToRole="Orders" />
+  </EntityType>
+  <Association Name="FK_Busket">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+    <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="Id_Order" />
+      </Principal>
+      <Dependent Role="Basket">
+        <PropertyRef Name="Id_Order" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Busket3">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+    <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="Id_Customer" />
+      </Principal>
+      <Dependent Role="Basket">
+        <PropertyRef Name="Id_Customer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_Products">
+    <End Role="Basket" Type="Self.Basket" Multiplicity="1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Basket">
+        <PropertyRef Name="Id_Basket" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="Id_Basket" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+    <End Role="Workers" Type="Self.Workers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="Id_Order" />
+      </Principal>
+      <Dependent Role="Workers">
+        <PropertyRef Name="Id_Order" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Basket" EntityType="Self.Basket" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" />
+    <EntitySet Name="Products" EntityType="Self.Products" />
+    <EntitySet Name="Workers" EntityType="Self.Workers" />
+    <AssociationSet Name="FK_Busket" Association="Self.FK_Busket">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="Basket" EntitySet="Basket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Busket3" Association="Self.FK_Busket3">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Basket" EntitySet="Basket" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_Products" Association="Self.Fk_Products">
+      <End Role="Basket" EntitySet="Basket" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order" Association="Self.FK_Order">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="Workers" EntitySet="Workers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
